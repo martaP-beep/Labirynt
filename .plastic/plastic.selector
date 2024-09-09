@@ -1,0 +1,3 @@
+repository "Labirynt@martolandia@cloud"
+  path "/"
+    smartbranch "/main" changeset "1"
