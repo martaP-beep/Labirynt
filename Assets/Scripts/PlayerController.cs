@@ -23,6 +23,14 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.tag == "Pickup")
+        {
+            hit.gameObject.GetComponent<Pickup>().Picked();
+        }
+    }
+
     void PlayerMove()
     {
         RaycastHit hit;

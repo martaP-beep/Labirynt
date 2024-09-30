@@ -6,11 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
+    public int points = 0;
+
+    public int redKeys = 0;
+    public int greenKeys = 0;
+    public int goldKeys = 0;
+
     [SerializeField] int timeToEnd;
 
     bool endGame = false;
     bool win = false;
     bool gamePaused = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +34,38 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PauseCheck();
+    }
+
+    public void AddPoints(int point)
+    {
+        points += point;
+    }
+
+    public void AddTime(int time)
+    {
+        timeToEnd += time;
+    }
+
+    public void FreezeTime(int time)
+    {
+        CancelInvoke(nameof(Stopper));
+        InvokeRepeating(nameof(Stopper),time,1);
+    }
+
+    public void AddKey(KeyColor color)
+    {
+        if (color == KeyColor.Red)
+        {
+            redKeys++;
+        }
+        else if (color == KeyColor.Green)
+        {
+            greenKeys++;
+        }
+        else if (color == KeyColor.Gold)
+        {
+            goldKeys++;
+        }
     }
 
     void Stopper()
