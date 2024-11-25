@@ -8,7 +8,7 @@ public class Lock : MonoBehaviour
     public KeyColor myColor;
     bool locked = false;
     bool canOpen = false;
-
+    Animator key;
 
     public bool CheckKey()
     {
@@ -69,12 +69,16 @@ public class Lock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        key = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(canOpen && locked==false 
+            && Input.GetKeyDown(KeyCode.E))
+        {
+            key.SetBool("useKey", CheckKey());
+        }
     }
 }
