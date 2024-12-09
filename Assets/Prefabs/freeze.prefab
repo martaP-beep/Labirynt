@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a55a3db5b33d6a43be13cd801fe5c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: f9790a97a6bc0fa4a82273d43095f372, type: 3}
   freezeTime: 10
 --- !u!65 &168461024392118413
 BoxCollider:
