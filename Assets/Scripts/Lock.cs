@@ -16,6 +16,10 @@ public class Lock : MonoBehaviour
             && myColor == KeyColor.Red)
         {
             GameManager.gameManager.redKeys--;
+
+            GameManager.gameManager.redKeysText.text = 
+                GameManager.gameManager.redKeys.ToString();
+
             locked = true;
             return true;
         }
@@ -23,6 +27,9 @@ public class Lock : MonoBehaviour
            && myColor == KeyColor.Green)
         {
             GameManager.gameManager.greenKeys--;
+
+            GameManager.gameManager.greenKeysText.text =
+                GameManager.gameManager.greenKeys.ToString();
             locked = true;
             return true;
         }
@@ -30,6 +37,10 @@ public class Lock : MonoBehaviour
           && myColor == KeyColor.Gold)
         {
             GameManager.gameManager.goldKeys--;
+
+            GameManager.gameManager.goldKeysText.text =
+               GameManager.gameManager.goldKeys.ToString();
+
             locked = true;
             return true;
         }
@@ -54,6 +65,7 @@ public class Lock : MonoBehaviour
         {
             canOpen = true;
             Debug.Log("Mo¿esz u¿yæ klucza");
+            GameManager.gameManager.SetUseInfo("Press E to open lock");
         }
     }
 
@@ -63,6 +75,7 @@ public class Lock : MonoBehaviour
         {
             canOpen = false;
             Debug.Log("Nie mo¿esz u¿yæ klucza");
+            GameManager.gameManager.SetUseInfo("");
         }
     }
 
